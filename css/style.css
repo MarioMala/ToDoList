@@ -193,3 +193,27 @@ h2 {
 .root .task-container .tasks-box .task .confirm-box input {
 	margin-right: 1rem;
 }
+
+.root .task-container .tasks-box .task .confirm-box .del-btn {
+	margin-left: 2rem;
+	padding: 0 0.5rem;
+	font-size: 1rem;
+	font-family: var(--fontTeko);
+	background-color: inherit;
+	border: 1px solid var(--color-black);
+	border-radius: 0.3rem;
+	transition: transform 0.5s ease-in-out;
+}
+
+.root .task-container .tasks-box .task .confirm-box .del-btn:hover {
+	transform: scale(1.1);
+}
+
+@media (max-width: 500px) {
+	.root .task-form {
+		min-width: 95%;
+	}
+	.root .task-form input {
+		max-width: 60%;
+	}
+}

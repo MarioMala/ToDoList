@@ -35,7 +35,11 @@ const bodyTask = (task: any) => {
 	inputLabel.htmlFor = 'input-checkbox';
 	inputLabel.innerText = 'Zrobiony';
 
-	confirmBox.append(inputCheckBox, inputLabel);
+	const delBtn: HTMLButtonElement = document.createElement('button')
+	delBtn.classList.add("del-btn");
+	delBtn.innerText = 'Usuń'
+
+	confirmBox.append(inputCheckBox, inputLabel, delBtn);
 
 	li.append(taskText, confirmBox);
 	tasksBox.appendChild(li);
