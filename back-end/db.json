@@ -1,19 +1,14 @@
 {
   "tasks": [
     {
-      "id": 25452365,
-      "taskText": "Treść taska z backendu",
-      "done": false
-    },
-    {
       "id": 1714831396831,
       "taskText": "Treść taska z frontu",
       "done": false
     },
     {
-      "id": 1714841072800,
-      "taskText": "Wyprowadzić psa",
-      "done": false
+      "taskText": "Treść drugiego taska z frontu",
+      "done": true,
+      "id": 1714831396832
     }
   ]
 }

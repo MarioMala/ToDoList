@@ -190,11 +190,12 @@ h2 {
 	justify-content: flex-start;
 }
 
-.root .task-container .tasks-box .task .confirm-box input {
+.root .task-container .tasks-box .task  input {
 	margin-right: 1rem;
+	
 }
 
-.root .task-container .tasks-box .task .confirm-box .del-btn {
+.root .task-container .tasks-box .task  .del-btn {
 	margin-left: 2rem;
 	padding: 0 0.5rem;
 	font-size: 1rem;
@@ -205,7 +206,7 @@ h2 {
 	transition: transform 0.5s ease-in-out;
 }
 
-.root .task-container .tasks-box .task .confirm-box .del-btn:hover {
+.root .task-container .tasks-box .task  .del-btn:hover {
 	transform: scale(1.1);
 }
 
