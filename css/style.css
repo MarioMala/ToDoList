@@ -209,6 +209,12 @@ h2 {
 	transform: scale(1.1);
 }
 
+.confirm {
+	font-weight: bold;
+	text-decoration: line-through;
+	text-decoration-thickness: 2px;
+}
+
 @media (max-width: 500px) {
 	.root .task-form {
 		min-width: 95%;

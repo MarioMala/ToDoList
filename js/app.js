@@ -5,6 +5,7 @@ const inputTask = document.querySelector('.input-task');
 const btn = document.querySelector('.btn');
 const tasksBox = document.querySelector('.tasks-box');
 const tasks = await getData(link);
+console.log(tasks);
 const render = (dataTasks) => {
     dataTasks.map(task => {
         bodyTask(task.taskText);
@@ -25,9 +26,17 @@ const bodyTask = (task) => {
     const inputLabel = document.createElement('label');
     inputLabel.htmlFor = 'input-checkbox';
     inputLabel.innerText = 'Zrobiony';
+    inputCheckBox.addEventListener('change', () => {
+        inputCheckBox.checked ? taskText.classList.add('confirm') : taskText.classList.remove('confirm');
+    });
     const delBtn = document.createElement('button');
-    delBtn.classList.add("del-btn");
+    delBtn.classList.add('del-btn');
     delBtn.innerText = 'Usuń';
+    delBtn.addEventListener('click', () => {
+        fetch(link, {
+            method: 'delete',
+        });
+    });
     confirmBox.append(inputCheckBox, inputLabel, delBtn);
     li.append(taskText, confirmBox);
     tasksBox.appendChild(li);
@@ -36,13 +45,14 @@ const addTask = (e) => {
     e.preventDefault();
     const id = new Date().getTime();
     const taskText = inputTask.value;
-    taskText.length > 3 ? console.log(taskText) : alert('Wpisz treść zadania');
+    taskText.length > 3 ? '' : alert('Wpisz treść zadania');
     if (taskText.length > 40) {
         alert('Treść zadania nie może przekraczać 40 znaków!');
     }
     const task = {
         id,
         taskText,
+        done: false,
     };
     fetch(link, {
         method: 'post',
