@@ -1,0 +1,8 @@
+{
+	"compilerOptions": {
+		"rootDir": "./src",
+		"outDir": "./js",
+		"target": "ES2022",
+		"module": "ES2022"
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"name": "taskslist",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"compile": "tsc --watch"
+	},
+	"author": "Mariusz Małasiewicz",
+	"license": "ISC",
+	"dependencies": {
+		"typescript": "^5.4.5"
+	}
+}
