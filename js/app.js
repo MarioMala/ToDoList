@@ -1,8 +1,10 @@
+/** @format */
 const link = 'http://localhost:3000/tasks';
 import { getData } from '../js/components/api.js';
 const inputTask = document.querySelector('.input-task');
 const btn = document.querySelector('.btn');
 const tasksBox = document.querySelector('.tasks-box');
+const inputCategory = [...document.querySelectorAll('[name=category]')];
 let tasks = [];
 const fetchTasks = async () => {
     tasks = await getData(link);
@@ -15,7 +17,13 @@ const render = (dataTasks) => {
     });
 };
 const bodyTask = (task) => {
-    const { id, taskText, done } = task;
+    const { id, taskText, done, category } = task;
+    const CATEGORY_NAME_MAPPING = {
+        gym: 'Siłownia',
+        work: 'Praca',
+        social: 'Rodzina',
+    };
+    const currentCategory = CATEGORY_NAME_MAPPING[category];
     const li = document.createElement('li');
     li.classList.add('task');
     const taskTextElement = document.createElement('p');
@@ -26,8 +34,11 @@ const bodyTask = (task) => {
     const inputCheckBox = document.createElement('input');
     inputCheckBox.type = 'checkbox';
     inputCheckBox.checked = done;
-    const inputLabel = document.createElement("label");
-    inputLabel.innerText = "Zrobiony";
+    const inputLabel = document.createElement('label');
+    inputLabel.innerText = 'Zrobiony';
+    const categoryLabel = document.createElement('label');
+    categoryLabel.innerText = `Kategoria: ${currentCategory}`;
+    categoryLabel.classList.add('category');
     inputCheckBox.addEventListener('change', () => {
         const newDoneStatus = inputCheckBox.checked;
         fetch(`${link}/${id}`, {
@@ -54,7 +65,7 @@ const bodyTask = (task) => {
             fetchTasks();
         });
     });
-    li.append(taskTextElement, inputCheckBox, inputLabel, delBtn);
+    li.append(taskTextElement, categoryLabel, inputCheckBox, inputLabel, delBtn);
     tasksBox.appendChild(li);
 };
 const addTask = (e) => {
@@ -68,9 +79,11 @@ const addTask = (e) => {
         alert('Treść zadania nie może przekraczać 40 znaków!');
         return;
     }
+    const selectedCategory = inputCategory.find(category => category.checked).id;
     const task = {
         taskText,
         done: false,
+        category: selectedCategory,
     };
     fetch(link, {
         method: 'POST',

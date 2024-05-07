@@ -1,14 +1,22 @@
 {
   "tasks": [
     {
-      "id": 1714831396831,
-      "taskText": "Treść taska z frontu",
-      "done": false
+      "taskText": "Zrobić klatkę",
+      "done": false,
+      "category": "gym",
+      "id": 1
     },
     {
-      "taskText": "Treść drugiego taska z frontu",
-      "done": true,
-      "id": 1714831396832
+      "taskText": "Podpisać umowę",
+      "done": false,
+      "category": "work",
+      "id": 2
+    },
+    {
+      "taskText": "Iść na spacer z żoną",
+      "done": false,
+      "category": "social",
+      "id": 3
     }
   ]
 }

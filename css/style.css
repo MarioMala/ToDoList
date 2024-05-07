@@ -179,6 +179,11 @@ h2 {
 	border-bottom: 2px solid var(--color-black);
 }
 
+.root .task-container .tasks-box .task .category {
+	min-width: 10rem;
+	color: var(--color-blue);
+}
+
 .root .task-container .tasks-box .task p {
 	width: 60%;
 	padding-left: 1rem;
@@ -215,6 +220,26 @@ h2 {
 	text-decoration: line-through;
 	text-decoration-thickness: 2px;
 }
+
+
+.root .task-form .category-box {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	min-height: 4rem;
+}
+
+.root .task-form .category-box input {
+	margin-left: 2rem;
+	margin-right: 0.5rem;
+}
+
+.root .task-form  h3 {
+	font-size: 1rem;
+	margin-top: 1rem;
+	margin-left: 2rem;
+}
+
 
 @media (max-width: 500px) {
 	.root .task-form {
